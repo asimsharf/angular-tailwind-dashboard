@@ -6,12 +6,12 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: LayoutComponent,
-    loadComponent: () => import('../dashboard/dashboard.module').then((m) => m.DashboardModule),
+    loadChildren: () => import('../dashboard/dashboard.module').then((m) => m.DashboardModule),
   },
   {
     path: 'components',
     component: LayoutComponent,
-    loadComponent: () => import('../uikit/uikit.module').then((m) => m.UikitModule),
+    loadChildren: () => import('../uikit/uikit.module').then((m) => m.UikitModule),
   },
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   { path: '**', redirectTo: 'error/404' },
