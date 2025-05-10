@@ -13,11 +13,6 @@ const routes: Routes = [
     component: LayoutComponent,
     loadChildren: () => import('../events/events.module').then((m) => m.EventsModule),
   },
-  {
-    path: 'components',
-    component: LayoutComponent,
-    loadChildren: () => import('../uikit/uikit.module').then((m) => m.UikitModule),
-  },
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   { path: '**', redirectTo: 'error/404' },
 ];

@@ -1,8 +1,9 @@
 import { AfterViewInit, Component } from '@angular/core';
+import { TableComponent } from 'src/app/shared/components/table/table.component';
 
 @Component({
   selector: 'app-create-event',
-  imports: [],
+  imports: [TableComponent],
   templateUrl: './create-event.component.html',
   styleUrl: './create-event.component.css',
 })
