@@ -5,6 +5,7 @@ import { RouterLink } from '@angular/router';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { ThemeService } from '../../../../../core/services/theme.service';
 import { ClickOutsideDirective } from '../../../../../shared/directives/click-outside.directive';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-profile-menu',
@@ -88,7 +89,7 @@ export class ProfileMenuComponent implements OnInit {
   public themeMode = ['light', 'dark'];
   public themeDirection = ['ltr', 'rtl'];
 
-  constructor(public themeService: ThemeService) {}
+  constructor(public themeService: ThemeService, private translate: TranslateService) {}
 
   ngOnInit(): void {}
 
@@ -110,8 +111,24 @@ export class ProfileMenuComponent implements OnInit {
   }
 
   setDirection(value: string) {
+    const lang = value === 'rtl' ? 'ar' : 'en';
+
+    // Update theme state
     this.themeService.theme.update((theme) => {
       return { ...theme, direction: value };
     });
+
+    // Set direction on <html>
+    document.documentElement.setAttribute('dir', value);
+
+    // Set language and store it
+    this.translate.use(lang);
+    localStorage.setItem('lang', lang);
+    localStorage.setItem('dir', value);
+  }
+
+  changeLanguage(lang: string) {
+    this.translate.use(lang);
+    localStorage.setItem('lang', lang);
   }
 }

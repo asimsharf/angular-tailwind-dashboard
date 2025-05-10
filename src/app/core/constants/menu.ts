@@ -3,7 +3,40 @@ import { MenuItem } from '../models/menu.model';
 export class Menu {
   public static pages: MenuItem[] = [
     {
-      group: 'Base',
+      group: 'WATHIQ',
+      separator: true,
+      items: [
+        {
+          icon: 'assets/icons/heroicons/outline/home.svg',
+          label: 'Users',
+          route: '/home',
+          children: [
+            { label: 'Super admins', route: '/home/home-1' },
+            { label: 'Service admins', route: '/home/home-2' },
+            { label: 'Clients admins', route: '/home/home-3' },
+            { label: 'Clerks', route: '/home/home-4' },
+          ],
+        },
+        {
+          icon: 'assets/icons/heroicons/outline/heart.svg',
+          label: 'Clients',
+          route: '/favorites',
+          children: [
+            { label: 'Client 1', route: '/favorites/favorites-1' },
+            { label: 'Client 2', route: '/favorites/favorites-2' },
+            { label: 'Client 3', route: '/favorites/favorites-3' },
+            { label: 'Client 4', route: '/favorites/favorites-4' },
+          ],
+        },
+        {
+          icon: 'assets/icons/heroicons/outline/chat-alt.svg',
+          label: 'Chat',
+          route: '/chat',
+        },
+      ],
+    },
+    {
+      group: 'MAIN',
       separator: false,
       items: [
         {
