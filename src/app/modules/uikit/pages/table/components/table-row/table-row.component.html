@@ -1,7 +1,7 @@
 <ng-container>
   <td class="text-center">
     <input
-      [(ngModel)]="user.id"
+      [(ngModel)]="events.id"
       class="checkbox checkbox-sm"
       data-datatable-row-check="true"
       type="checkbox"
@@ -12,27 +12,28 @@
       <img
         alt="user avatar"
         class="h-9 w-9 shrink-0 rounded-full"
-        src="https://ui-avatars.com/api/?name={{ user.name.en }}&background=random" />
+        src="https://ui-avatars.com/api/?name={{ events.name.en }}&background=random" />
       <div class="flex flex-col items-start">
-        <a class="text-foreground hover:text-primary text-sm font-semibold" href="#"> {{ user.name.ar }} </a>
+        <a class="text-foreground hover:text-primary text-sm font-semibold" href="#"> {{ events.name.ar }} </a>
         <a class="text-muted-foreground/70 hover:text-primary text-xs font-medium" href="#">
-          {{ user.organizer.name.ar }}
+          {{ events.organizer.name.ar }}
         </a>
       </div>
     </div>
   </td>
-  <td>{{ user.lng }}</td>
+  <td>{{ events.lng }}</td>
+  <td>{{ events.lng }}</td>
   <td class="space-x-1">
-    @for (hobbie of user.eventCategories; track $index) {
+    @for (hobbie of events.eventCategories; track $index) {
     <span class="rounded-[30px] bg-yellow-500/10 px-2 py-0.5 text-xs font-medium text-yellow-800">
       {{ hobbie.name.ar }}
     </span>
     }
   </td>
   <td>
-    {{ user.location.ar }}
+    {{ events.location.ar }}
   </td>
-  <td>{{ user.organizer.phone }}</td>
+  <td>{{ events.organizer.phone }}</td>
   <td class="text-center">
     <button
       class="text-muted-foreground hover:bg-card hover:text-foreground flex h-7 w-7 items-center justify-center rounded-md">

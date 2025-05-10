@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EventsComponent } from './events.component';
 import { RouterModule, Routes } from '@angular/router';
-import { CreateEventComponent } from './create-event/create-event.component';
-import { ManageEventComponent } from './manage-event/manage-event.component';
+import { CreateEventComponent } from './pages/create-event/create-event.component';
+import { ManageEventComponent } from './pages/manage-event/manage-event.component';
 
 
 const routes: Routes = [
