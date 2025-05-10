@@ -4,12 +4,13 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
 import packageJson from '../../../../../../package.json';
 import { MenuService } from '../../services/menu.service';
 import { SidebarMenuComponent } from './sidebar-menu/sidebar-menu.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css'],
-  imports: [NgClass, NgIf, AngularSvgIconModule, SidebarMenuComponent],
+  imports: [NgClass, NgIf, AngularSvgIconModule, SidebarMenuComponent, TranslateModule],
 })
 export class SidebarComponent implements OnInit {
   public appJson: any = packageJson;

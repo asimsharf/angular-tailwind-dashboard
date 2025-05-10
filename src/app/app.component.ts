@@ -10,7 +10,6 @@ import { ResponsiveHelperComponent } from './shared/components/responsive-helper
   imports: [RouterOutlet, ResponsiveHelperComponent, NgxSonnerToaster],
 })
 export class AppComponent {
-  title = 'DASHBOARD';
 
   constructor(public themeService: ThemeService) {}
 }

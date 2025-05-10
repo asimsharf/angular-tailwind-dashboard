@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
+import packageJson from '../../../../../../package.json';
 
 @Component({
   selector: 'app-footer',
@@ -9,6 +10,7 @@ import { TranslateModule } from '@ngx-translate/core';
   imports: [TranslateModule],
 })
 export class FooterComponent implements OnInit {
+  public appJson: any = packageJson;
   public year: number = new Date().getFullYear();
 
 
