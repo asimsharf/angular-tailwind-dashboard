@@ -1,6 +1,39 @@
 {
-    "TITLE": "Welcome",
-    "LOGIN": "Login",
-    "AUTHOR": "Author"
+  "TITLE": "Welcome",
+  "LOGIN": "Login",
+  "AUTHOR": "Author",
+  "MENU": {
+    "USERS": "Users",
+    "SUPER_ADMINS": "Super admins",
+    "SERVICE_ADMINS": "Service admins",
+    "CLIENTS_ADMINS": "Clients admins",
+    "CLERKS": "Clerks",
+    "CLIENTS": "Clients",
+    "CLIENT1": "Client 1",
+    "CLIENT2": "Client 2",
+    "CLIENT3": "Client 3",
+    "CLIENT4": "Client 4",
+    "CHAT": "Chat",
+    "DASHBOARD": "Dashboard",
+    "NFTS": "Nfts",
+    "AUTH": "Auth",
+    "SIGN_UP": "Sign up",
+    "SIGN_IN": "Sign in",
+    "FORGOT_PASSWORD": "Forgot Password",
+    "NEW_PASSWORD": "New Password",
+    "TWO_STEPS": "Two Steps",
+    "ERRORS": "Errors",
+    "ERROR_404": "404",
+    "ERROR_500": "500",
+    "COMPONENTS": "Components",
+    "TABLE": "Table",
+    "DOWNLOAD": "Download",
+    "GIFT_CARD": "Gift Card",
+    "SETTINGS": "Settings",
+    "NOTIFICATIONS": "Notifications",
+    "FOLDERS": "Folders",
+    "CURRENT_FILES": "Current Files",
+    "DOWNLOADS": "Downloads",
+    "TRASH": "Trash"
   }
-  
+}

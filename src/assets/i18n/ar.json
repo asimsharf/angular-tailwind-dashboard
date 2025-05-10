@@ -1,6 +1,39 @@
 {
-    "TITLE": "مرحبا",
-    "LOGIN": "دخول",
-    "AUTHOR": "المؤلف"
+  "TITLE": "مرحبا",
+  "LOGIN": "دخول",
+  "AUTHOR": "المؤلف",
+  "MENU": {
+    "USERS": "المستخدمون",
+    "SUPER_ADMINS": "المدراء العامون",
+    "SERVICE_ADMINS": "مدراء الخدمة",
+    "CLIENTS_ADMINS": "مدراء العملاء",
+    "CLERKS": "الكتبة",
+    "CLIENTS": "العملاء",
+    "CLIENT1": "عميل 1",
+    "CLIENT2": "عميل 2",
+    "CLIENT3": "عميل 3",
+    "CLIENT4": "عميل 4",
+    "CHAT": "الدردشة",
+    "DASHBOARD": "لوحة التحكم",
+    "NFTS": "الرموز غير القابلة للاستبدال",
+    "AUTH": "المصادقة",
+    "SIGN_UP": "تسجيل حساب",
+    "SIGN_IN": "تسجيل الدخول",
+    "FORGOT_PASSWORD": "نسيت كلمة المرور",
+    "NEW_PASSWORD": "كلمة مرور جديدة",
+    "TWO_STEPS": "التحقق بخطوتين",
+    "ERRORS": "أخطاء",
+    "ERROR_404": "404",
+    "ERROR_500": "500",
+    "COMPONENTS": "المكونات",
+    "TABLE": "الجدول",
+    "DOWNLOAD": "تحميل",
+    "GIFT_CARD": "بطاقة هدية",
+    "SETTINGS": "الإعدادات",
+    "NOTIFICATIONS": "الإشعارات",
+    "FOLDERS": "المجلدات",
+    "CURRENT_FILES": "الملفات الحالية",
+    "DOWNLOADS": "التنزيلات",
+    "TRASH": "المحذوفات"
   }
-  
+}
