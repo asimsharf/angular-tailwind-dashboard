@@ -1,6 +1,6 @@
 {
   "name": "angular-tailwind",
-  "displayName": "Angular Tailwind",
+  "displayName": "DASHBOARD",
   "version": "0.10.1",
   "description": "Angular & Tailwind CSS Admin Dashboard Starter Kit, Free and Open Source",
   "homepage": "https://github.com/lannodev/angular-tailwind#readme",
@@ -16,7 +16,7 @@
     "dark mode",
     "open source"
   ],
-  "author": "Luciano Oliveira <me@lanno.dev>",
+  "author": "Asim Abdelgadir <asimsharf@gmail.com>",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
