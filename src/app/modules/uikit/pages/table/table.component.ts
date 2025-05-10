@@ -3,13 +3,13 @@ import { Component, computed, OnInit, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { toast } from 'ngx-sonner';
-import { dummyData } from 'src/app/shared/dummy/user.dummy';
+// import { dummyData } from 'src/app/shared/dummy/user.dummy';
 import { TableActionComponent } from './components/table-action/table-action.component';
 import { TableFooterComponent } from './components/table-footer/table-footer.component';
 import { TableHeaderComponent } from './components/table-header/table-header.component';
 import { TableRowComponent } from './components/table-row/table-row.component';
-import { User } from './model/user.model';
 import { TableFilterService } from './services/table-filter.service';
+import { Datum, EventsModel } from './model/events.model';
 
 @Component({
   selector: 'app-table',
@@ -25,22 +25,22 @@ import { TableFilterService } from './services/table-filter.service';
   styleUrl: './table.component.css',
 })
 export class TableComponent implements OnInit {
-  users = signal<User[]>([]);
+  events = signal<Datum[]>([]);
 
   constructor(private http: HttpClient, private filterService: TableFilterService) {
-    this.http.get<User[]>('https://freetestapi.com/api/v1/users?limit=8').subscribe({
-      next: (data) => this.users.set(data),
+    this.http.get<EventsModel>('https://kpin.wathiq.tech/api/events/events?page=0&size=10').subscribe({
+      next: (data) => this.events.set(data.data),
       error: (error) => {
-        this.users.set(dummyData);
+        // this.events.set(dummyData);
         this.handleRequestError(error);
       },
     });
   }
 
   public toggleUsers(checked: boolean) {
-    this.users.update((users) => {
-      return users.map((user) => {
-        return { ...user, selected: checked };
+    this.events.update((events) => {
+      return events.map((event) => {
+        return { ...event, selected: checked };
       });
     });
   }
@@ -63,23 +63,23 @@ export class TableComponent implements OnInit {
     const status = this.filterService.statusField();
     const order = this.filterService.orderField();
 
-    return this.users()
+    return this.events()
       .filter(
-        (user) =>
-          user.name.toLowerCase().includes(search) ||
-          user.username.toLowerCase().includes(search) ||
-          user.email.toLowerCase().includes(search) ||
-          user.phone.includes(search),
+        (event) =>
+          event.name.en.toLowerCase().includes(search) ||
+          event.name.en.toLowerCase().includes(search) ||
+          event.name.en.toLowerCase().includes(search) ||
+          event.name.en.includes(search),
       )
-      .filter((user) => {
+      .filter((event) => {
         if (!status) return true;
         switch (status) {
           case '1':
-            return user.status === 1;
+            return event.id === 1;
           case '2':
-            return user.status === 2;
+            return event.id === 2;
           case '3':
-            return user.status === 3;
+            return event.id === 3;
           default:
             return true;
         }
@@ -87,9 +87,9 @@ export class TableComponent implements OnInit {
       .sort((a, b) => {
         const defaultNewest = !order || order === '1';
         if (defaultNewest) {
-          return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
+          return new Date(b.startDate).getTime() - new Date(a.startDate).getTime();
         } else if (order === '2') {
-          return new Date(a.created_at).getTime() - new Date(b.created_at).getTime();
+          return new Date(a.startDate).getTime() - new Date(b.startDate).getTime();
         }
         return 0;
       });

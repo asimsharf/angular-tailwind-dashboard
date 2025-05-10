@@ -1,7 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AngularSvgIconModule } from 'angular-svg-icon';
-import { User } from '../../model/user.model';
+import { Datum } from '../../model/events.model';
+// import { User } from '../../model/user.model';
 
 @Component({
   selector: '[app-table-row]',
@@ -10,7 +11,7 @@ import { User } from '../../model/user.model';
   styleUrl: './table-row.component.css',
 })
 export class TableRowComponent {
-  @Input() user: User = <User>{};
+  @Input() user: Datum = <Datum>{};
 
   constructor() {}
 }
